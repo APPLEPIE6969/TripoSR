@@ -30,14 +30,12 @@ jobs:
           git config --global user.email "bot@example.com"
           git config --global user.name "Bot"
           git lfs install
-          cat << 'LFS_EOF' > .gitattributes
-*.png filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.pth filter=lfs diff=lfs merge=lfs -text
-*.bin filter=lfs diff=lfs merge=lfs -text
-LFS_EOF
+          echo "*.png filter=lfs diff=lfs merge=lfs -text" > .gitattributes
+          echo "*.jpg filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+          echo "*.jpeg filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+          echo "*.gif filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+          echo "*.pth filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+          echo "*.bin filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
           git add .
           git commit -m "Deploy to Hugging Face Space"
           git remote add space https://applepie69:$HF_TOKEN@huggingface.co/spaces/applepie69/TripoSR
