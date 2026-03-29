@@ -1,0 +1,6 @@
+build-essential
+ninja-build
+cmake
+g++
+libgl1-mesa-glx
+ffmpeg
