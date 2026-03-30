@@ -1,9 +1,4 @@
 
-import sys
-import types
-if 'audioop' not in sys.modules:
-    sys.modules['audioop'] = types.ModuleType('audioop')
-
 import logging
 import os
 import tempfile

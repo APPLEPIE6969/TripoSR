@@ -5,10 +5,11 @@ colorFrom: blue
 colorTo: indigo
 sdk: gradio
 sdk_version: 4.19.2
+python_version: 3.10
 app_file: app.py
 pinned: false
 env:
-  MAX_JOBS: "1"
+  MAX_JOBS: "4"
 ---
 ---
 
