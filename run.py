@@ -9,6 +9,17 @@ import torch
 import xatlas
 from PIL import Image
 
+
+import os
+import subprocess
+import sys
+
+try:
+    import torchmcubes
+except ImportError:
+    print("Installing torchmcubes...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "git+https://github.com/tatsy/torchmcubes.git", "--no-build-isolation"])
+
 from tsr.system import TSR
 from tsr.utils import remove_background, resize_foreground, save_video
 from tsr.bake_texture import bake_texture
