@@ -20,6 +20,7 @@ try:
     import torchmcubes
 except ImportError:
     print("Installing torchmcubes...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "scikit-build-core", "pybind11", "cmake", "ninja"])
     subprocess.check_call([sys.executable, "-m", "pip", "install", "git+https://github.com/tatsy/torchmcubes.git", "--no-build-isolation"])
 
 from tsr.system import TSR
